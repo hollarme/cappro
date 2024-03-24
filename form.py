@@ -32,9 +32,9 @@ with st.status("", expanded=True) as status:
             matric_number = st.text_input('Enter your matric number', placeholder='XXX/YYYY/ZZZ', max_chars=12, key='matric')
             
             try:
-                
-                placeholder.text(re.findall("[A-Z]{3}/[0-9]{4}/[0-9]{3}", matric_number)[0])
-                placeholder.empty()
+                if matric_number:
+                    placeholder.text(re.findall("[A-Z]{3}/[0-9]{4}/[0-9]{3}", matric_number)[0])
+                    placeholder.empty()
 
                 full_name = st.text_input('Enter your full name (surname first)', value="" if not matric_number else get_data(matric_number).get('Names', ""), key='full')
 
