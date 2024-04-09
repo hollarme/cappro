@@ -27,7 +27,7 @@ with st.container(border=True):
     - It shall take the form of a poster presentation (see the poster template below) where the assessors and guests will have the chance to interact with the presenters
     - You will also need to write a concise report (3 to 5 pages) on your work (see the report link below)
     - Both the report and the poster are to be submitted with file upload menu, on or before :red[midnight Thursday $11^{th}$ of April 2024].
-    - Each poster presentation transaction between an assessor and the student should not take more than 10 mins: 5 minutes for the presentation and 5 for questions and answers
+    - Each poster presentation transaction between an assessor and the student should not take more than :red[10 minutes]: :blue[5 minutes for the presentation] and :green[5 minutes for questions and answers]
     - You are required to print the poster on an A1 paper
     
     ## Material Links:
