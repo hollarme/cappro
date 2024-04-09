@@ -39,7 +39,7 @@ try:
                     assessors = get_data(matric_number).get('Assessors', "")
                     st.caption(f'Your assessors are: :red[{assessors}]')
 
-                    readiness = st.slider('How ready are you for a presentation?', min_value=0, max_value=10, value=0 if not matric_number else get_data(matric_number).get('Readiness', 0), key='read')
+                    readiness = st.slider('How ready are you for a presentation?', min_value=0.0, max_value=10.0, value=0.0 if not matric_number else get_data(matric_number).get('Readiness', 0.0), key='read')
 
                     # submitted = st.form_submit_button("Submit")
                     submitted = st.button("Submit")
