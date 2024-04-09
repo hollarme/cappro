@@ -1,7 +1,7 @@
 import streamlit as st
-
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+
 
 # (kibtool) imachine@imachine:~$ mongosh "mongodb+srv://cluster0.lhxokzx.mongodb.net/" --apiVersion 1 --username bovenssolutions
 # st.write(st.secrets["mongo"]["uri"])
@@ -28,7 +28,7 @@ def get_all_data():
     db = st.session_state['db']
     collection = st.session_state['collection']
     
-    items = db[collection].find({},{'_id':0})
+    items = db[collection].find({})#,{'_id':0})
     items = list(items)  # make hashable for st.cache_data
     return items if items else {}
 
@@ -40,4 +40,5 @@ def put_data(uid, data):
     db = st.session_state['db']
     collection = st.session_state['collection']
     db[collection].replace_one({'_id':uid},data,True)
+
 
