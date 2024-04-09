@@ -2,6 +2,9 @@ import streamlit as st
 import re
 import gridfs
 
+from utils import get_data
+
+
 st.set_page_config(page_title="Capstone Project Tool", layout="wide") 
 
 st.header("Files Upload")
@@ -22,6 +25,8 @@ try:
             if matric_number:                
                 placeholder.text(re.findall("[A-Z]{3}/[0-9]{4}/[0-9]{3}", matric_number)[0])
                 placeholder.empty()
+                
+                get_data(matric_number)['Names']
 
                 report = st.file_uploader('Upload report here (pdf only)', type='pdf', key='report')
 
@@ -53,7 +58,7 @@ try:
                 st.info('You need to input your matric number to enable file upload!')
 
         except:
-            st.warning('Make sure the matric number is correct', icon="⚠️")
+            st.warning('Make sure the matric number is correct and eligible', icon="⚠️")
 
 except:
     st.switch_page("information.py")
