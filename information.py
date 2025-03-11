@@ -8,7 +8,7 @@ if 'client' not in st.session_state:
     st.session_state['client'] = init_connection()
     
 if 'db' not in st.session_state:
-    st.session_state['db'] = st.session_state['client'].capstoneDB
+    st.session_state['db'] = st.session_state['client'].capstoneDB_2324
 
 # if 'collection' not in st.session_state:
 #     st.session_state['collection'] = 'title_information_form'
@@ -23,7 +23,7 @@ with st.container(border=True):
     st.markdown("""
     ## General Information:
     
-    - Please be aware that :red[EEE501 defense] for the 2022/2023 academic session will take place on :red[Tuesday $16^{th}$ and Wednesday $17^{th}$] of the month of April 2024
+    - Please be aware that :red[EEE501 defense] for the 2023/2024 academic session will take place on :red[Tuesday $16^{th}$ and Wednesday $17^{th}$] of the month of April 2024
     - It shall take the form of a poster presentation (see the poster template below) where the assessors and guests will have the chance to interact with the presenters
     - You will also need to write a concise report (3 to 5 pages) on your work (see the report link below)
     - Both the report and the poster are to be submitted with file upload menu, on or before :red[midnight Thursday $11^{th}$ of April 2024].

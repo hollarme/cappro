@@ -29,7 +29,7 @@ try:
 
                     title = st.text_input('Enter the title of your project work', value="" if not matric_number else get_data(matric_number).get('Title', ""), key='title')
 
-                    opts = ["",'Mr. Olorunniwo', 'Dr. Aransiola', 'Dr. Obayiuwana', 'Dr. Yesufu', 'Dr. Ariyo', 'Dr. Ogunseye', 'Mr. Olayiwola', 'Dr. Ayodele', 'Dr. Ilori', 'Mr. Akinboboye', 'Dr. Olawole', 'Dr. Babalola', 'Dr. Ogunba', 'Dr. Fisusi', 'Dr. Jubril']
+                    opts = ["",'Mr. Olorunniwo', 'Dr. Aransiola', 'Dr. Obayiuwana', 'Dr. Yesufu', 'Dr. Ariyo', 'Dr. Ogunseye', 'Mr. Olayiwola', 'Dr. Ayodele', 'Dr. Ilori', 'Mr. Akinboboye', 'Dr. Olawole', 'Dr. Fisusi', 'Dr. Jubril']
 
                     supervisor = st.selectbox('Who is your supervisor?', options=opts, index=0 if not matric_number else opts.index(get_data(matric_number).get('Supervisor', "").title()), key='super')
 
