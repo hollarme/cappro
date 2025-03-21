@@ -29,7 +29,7 @@ with st.status("", expanded=True) as status:
 
             title = st.text_input('Enter the title of your project work', value="" if not matric_number else get_data(matric_number).get('Title', ""), key='title')
 
-            opts = ["",'Mr. O. Olorunniwo', 'Dr. A. Aransiola', 'Dr. E. Obayiuwana', 'Dr. T. K. Yesufu', 'Dr. F. K. Ariyo', 'Dr. A. A. Ogunseye', 'Mr. Olayiwola Pipelolu', 'Dr. K. P. Ayodele', 'Dr. O. Ilori', 'Mr. E. Akinboboye', 'Dr. A. A. Olawole', 'Dr. A. A. Fisusi', 'Dr. A. M. Jubril']
+            opts = ["",'Mr. O. Olorunniwo', 'Dr. A. Aransiola', 'Dr. E. Obayiuwana', 'Prof. T. K. Yesufu', 'Dr. F. K. Ariyo', 'Dr. A. A. Ogunseye', 'Mr. Olayiwola Pipelolu', 'Dr. K. P. Ayodele', 'Dr. O. Ilori', 'Mr. E. Akinboboye', 'Dr. A. A. Olawole', 'Dr. A. A. Fisusi', 'Dr. A. M. Jubril']
 
             supervisor = st.selectbox('Who is your supervisor?', options=opts, index=0 if not matric_number else opts.index(get_data(matric_number).get('Supervisor', "").title()), key='super')
 
