@@ -8,7 +8,7 @@ if 'client' not in st.session_state:
     st.session_state['client'] = init_connection()
     
 if 'db' not in st.session_state:
-    st.session_state['db'] = st.session_state['client'].capstoneDB_2324
+    st.session_state['db'] = st.session_state['client'].capstoneDB_2425
 
 # if 'collection' not in st.session_state:
 #     st.session_state['collection'] = 'title_information_form'
@@ -23,9 +23,9 @@ with st.container(border=True):
     st.markdown("""
     ## General Information:
     
-    - Please be aware that :red[EEE501 defense] for the 2023/2024 academic session will take place on :red[Tuesday $25^{th}$ and Wednesday $26^{th}$] of the month of March 2025
+    - Please be aware that :red[EEE501 defense] for the 2024/2025 harmattan academic session will take place on :red[Wednesday $8^{th}$] of the month of April 2026
     - You will also need to write a concise report (3 to 5 pages) on your work (see the link to the report template below)
-    - Submit your report with file upload menu, on or before :red[midnight Saturday $22^{nd}$ of March 2025].
+    - Submit your report with file upload menu, on or before :red[midnight Saturday $6^{nd}$ of April 2026].
     - Come with a printed copy of your report to the defence session
     
     ## Material Links:

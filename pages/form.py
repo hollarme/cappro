@@ -25,13 +25,13 @@ with st.status("", expanded=True) as status:
                     placeholder.text(re.findall("[A-Z]{3}/[0-9]{4}/[0-9]{3}", matric_number)[0])
                     placeholder.empty()
 
-                full_name = st.text_input('Enter your full name (surname first)', value="" if not matric_number else get_data(matric_number).get('Names', ""), key='full')
+                full_name = st.text_input('Enter your full name (surname first)', disabled=True, value="" if not matric_number else get_data(matric_number).get('Names', ""), key='full')
 
                 title = st.text_input('Enter the title of your project work', value="" if not matric_number else get_data(matric_number).get('Title', ""), key='title')
 
                 opts = ["",'Mr. O. Olorunniwo', 'Dr. A. Aransiola', 'Dr. E. Obayiuawana', 'Prof. T. K. Yesufu', 'Dr. F. K. Ariyo', 'Dr. A. A. Ogunseye', 'Mr. Olayiwola Pipelolu', 'Dr. K. P. Ayodele', 'Dr. O. Ilori', 'Mr. E. Akinboboye', 'Dr. A. A. Olawole', 'Dr. A. A. Fisusi', 'Dr. A. M. Jubril']
 
-                supervisor = st.selectbox('Who is your supervisor?', options=opts, index=0 if not matric_number else opts.index(get_data(matric_number).get('Supervisor', "").title().strip()), key='super')
+                supervisor = st.selectbox('Who is your supervisor?', options=opts, disabled=True, index=0 if not matric_number else opts.index(get_data(matric_number).get('Supervisor', "").title().strip()), key='super')
 
                 option = get_data(matric_number).get('Option', "")
                 group = get_data(matric_number).get('Group', "")
@@ -42,7 +42,8 @@ with st.status("", expanded=True) as status:
                 readiness = st.slider('How ready are you for a presentation?', min_value=0.0, max_value=10.0, value=0.0 if not matric_number else float(get_data(matric_number).get('Readiness', 0.0)), key='read')
 
                 # submitted = st.form_submit_button("Submit")
-                submitted = st.button("Submit")
+                if full_name:
+                    submitted = st.button("Submit")
 
                 if submitted:
                     if not all([matric_number=="", full_name=="", title=="", supervisor==""]):
