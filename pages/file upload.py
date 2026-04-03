@@ -14,7 +14,7 @@ try:
     
     fs_report = gridfs.GridFS(st.session_state['db'], 'report')
 
-    fs_poster = gridfs.GridFS(st.session_state['db'], 'poster')
+    #fs_poster = gridfs.GridFS(st.session_state['db'], 'poster')
 
     placeholder = st.empty()
 
@@ -41,18 +41,18 @@ try:
                 except:
                     pass
 
-                poster = st.file_uploader('Upload poster here (pdf only)', type='pdf', key='poster')
+                # poster = st.file_uploader('Upload poster here (pdf only)', type='pdf', key='poster')
 
-                if poster:
-                    if fs_poster.exists({"_id": matric_number}):
-                        fs_poster.delete(matric_number)
-                    file_id = fs_poster.put(poster, _id=matric_number, filename=f'{matric_number}_poster.pdf')
+                # if poster:
+                #     if fs_poster.exists({"_id": matric_number}):
+                #         fs_poster.delete(matric_number)
+                #     file_id = fs_poster.put(poster, _id=matric_number, filename=f'{matric_number}_poster.pdf')
 
-                try:
-                    out_poster = fs_poster.get(matric_number)
-                    st.write(out_poster.filename, out_poster.upload_date)
-                except:
-                    pass
+                # try:
+                #     out_poster = fs_poster.get(matric_number)
+                #     st.write(out_poster.filename, out_poster.upload_date)
+                # except:
+                #     pass
 
             else:
                 st.info('You need to input your matric number to enable file upload!')
