@@ -29,7 +29,7 @@ try:
 
                     title = st.text_input('Enter the title of your project work', value="" if not matric_number else get_data(matric_number).get('Title', ""), key='title')
 
-                    opts = ["",'Mr. O. Olorunniwo', 'Dr. A. Aransiola', 'Dr. E. Obayiuawana', 'Prof. T. K. Yesufu', 'Dr. F. K. Ariyo', 'Dr. A. A. Ogunseye', 'Mr. Olayiwola Pipelolu', 'Dr. K. P. Ayodele', 'Dr. O. Ilori', 'Mr. E. Akinboboye', 'Dr. A. A. Olawole', 'Dr. A. A. Fisusi', 'Dr. A. M. Jubril']
+                    opts = ["",'Mr. O. Olorunniwo', 'Dr. A. Aransiola', 'Dr. E. Obayiuawana', 'Dr. T. K. Yesufu', 'Dr. F. K. Ariyo', 'Dr. A. A. Ogunseye', 'Mr. Olayiwola Pipelolu', 'Dr. K. P. Ayodele', 'Dr. O. Ilori', 'Mr. E. Akinboboye', 'Dr. A.A. Olawole', 'Dr. A. A. Fisusi', 'Dr. A. M. Jubril']
 
                     supervisor = st.selectbox('Who is your supervisor?', options=opts, disabled=True, index=0 if not matric_number else opts.index(get_data(matric_number).get('Supervisor', "").title().strip()), key='super')
 
@@ -45,13 +45,13 @@ try:
                     if full_name:
                         submitted = st.button("Submit")
 
-                    if submitted:
-                        if not all([matric_number=="", full_name=="", title=="", supervisor==""]):
-                            put_data(matric_number, {"_id": matric_number, "Title": title, "Names": full_name, "Supervisor": supervisor, "Option": option, "Group": group, "Assessors": assessors, "Readiness": readiness})
-                            status.update(label="upload complete!", state="complete")
-                        else:
-                            st.warning('Make sure all the fields are properly filled', icon="⚠️")
-                            status.update(label="upload not complete!", state="error")
+                        if submitted:
+                            if not all([matric_number=="", full_name=="", title=="", supervisor==""]):
+                                put_data(matric_number, {"_id": matric_number, "Title": title, "Names": full_name, "Supervisor": supervisor, "Option": option, "Group": group, "Assessors": assessors, "Readiness": readiness})
+                                status.update(label="upload complete!", state="complete")
+                            else:
+                                st.warning('Make sure all the fields are properly filled', icon="⚠️")
+                                status.update(label="upload not complete!", state="error")
 
                 except:
                     st.warning('Make sure the matric number is correct', icon="⚠️")

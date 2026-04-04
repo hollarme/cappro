@@ -25,7 +25,7 @@ with st.container(border=True):
     
     - Please be aware that :red[EEE501 defense] for the 2024/2025 harmattan academic session will take place on :red[Wednesday $8^{th}$] of the month of April 2026
     - You will also need to write a concise report (3 to 5 pages) on your work (see the link to the report template below)
-    - Submit your report with file upload menu, on or before :red[midnight Saturday $6^{nd}$ of April 2026].
+    - Submit your report with file upload menu, on or before :red[midnight Monday $6^{nd}$ of April 2026].
     - Come with a printed copy of your report to the defence session
     
     ## Material Links:
