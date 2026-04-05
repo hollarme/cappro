@@ -6,6 +6,7 @@ import re
 from utils import get_data, get_all_data, put_data, init_connection
 
 st.set_page_config(page_title="Capstone Project Tool", layout="wide") 
+# print([""]+list(set([di['Supervisor'] for di in get_all_data()])))
 
 try:
     placeholder = st.empty()
@@ -29,7 +30,7 @@ try:
 
                     title = st.text_input('Enter the title of your project work', value="" if not matric_number else get_data(matric_number).get('Title', ""), key='title')
 
-                    opts = ["",'Mr. O. Olorunniwo', 'Dr. A. Aransiola', 'Dr. E. Obayiuawana', 'Dr. T. K. Yesufu', 'Dr. F. K. Ariyo', 'Dr. A. A. Ogunseye', 'Mr. Olayiwola Pipelolu', 'Dr. K. P. Ayodele', 'Dr. O. Ilori', 'Mr. E. Akinboboye', 'Dr. A.A. Olawole', 'Dr. A. A. Fisusi', 'Dr. A. M. Jubril']
+                    opts = [""]+list(set([di['Supervisor'] for di in get_all_data()]))#["",'Mr. O. Olorunniwo', 'Dr. A. Aransiola', 'Dr. E. Obayiuawana', 'Dr. T. K. Yesufu', 'Dr. F. K. Ariyo', 'Dr. A. A. Ogunseye', 'Mr. Olayiwola Pipelolu', 'Dr. K. P. Ayodele', 'Dr. O. Ilori', 'Mr. E. Akinboboye', 'Dr. A.A. Olawole', 'Dr. A. A. Fisusi', 'Dr. A. M. Jubril']
 
                     supervisor = st.selectbox('Who is your supervisor?', options=opts, disabled=True, index=0 if not matric_number else opts.index(get_data(matric_number).get('Supervisor', "").title().strip()), key='super')
 
